@@ -1,3 +1,14 @@
+WIN_COMBINATIONS = [
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,4,8],
+  [2,4,6],
+  [0,3,6],
+  [2,5,8],
+  [1,4,7]
+]
+
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -34,14 +45,6 @@ def turn(board)
   end
 end
 
-def play(board)
-  counter = 0
-  while counter < 9
-    turn(board)
-  counter +=1
-end
-end
-
 def turn_count(board)
   counter = 0
   board.each do |turn|
@@ -59,21 +62,6 @@ def current_player(board)
     "O"
   end
 end
-
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
-end
-
-WIN_COMBINATIONS = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-  [0,4,8],
-  [2,4,6],
-  [0,3,6],
-  [2,5,8],
-  [1,4,7]
-]
 
 def won?(board)
   WIN_COMBINATIONS.each do |win_array|
