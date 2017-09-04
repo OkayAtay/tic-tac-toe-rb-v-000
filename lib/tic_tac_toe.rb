@@ -56,6 +56,7 @@ def play(board)
 else
   puts "Cat's game!"
 end
+end
 
 def turn_count(board)
   board.count{|token| token != " "}
