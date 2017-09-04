@@ -45,16 +45,21 @@ def turn(board)
   end
 end
 
+def play(board)
+  turn(board)
+  if over?(board)
+    puts "Congratulations winner #{winner(board)}"
+  else
+    turn(board)
+  end
+end
+
 def turn_count(board)
-  9 - board.count(" ")
+  board.count{|token| token != " "}
 end
 
 def current_player(board)
-  if turn_count(board).even? == true
-    "X"
-  else
-    "O"
-  end
+  turn_count(board).even? ? "X" : "O"
 end
 
 def won?(board)
