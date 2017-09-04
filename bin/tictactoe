@@ -6,6 +6,7 @@ def play(board)
   input = gets.strip
   if over?(board)
   else
+    turn(board)
   end
 end
 
