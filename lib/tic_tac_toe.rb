@@ -38,7 +38,7 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
-    move(board, index, "X")
+    move(board, index, current_player(board))
     display_board(board)
   else
     turn(board)
@@ -46,12 +46,13 @@ def turn(board)
 end
 
 def play(board)
-  turn(board)
-  if over?(board)
-    puts "Congratulations winner #{winner(board)}"
-  else
+  # we have the board that of course can pass to other method calls
+  
+  until over?(board)
     turn(board)
   end
+  if won?(board)
+  puts "Congratulations winner #{winner(board)}"
 end
 
 def turn_count(board)
@@ -83,11 +84,11 @@ def full?(board)
 end
 
 def draw?(board)
-  won?(board) == false && full?(board)
+  !won?(board) && full?(board)
 end
 
 def over?(board)
-  won?(board) || draw?(board) || full?(board)
+  won?(board) || draw?(board)
 end
 
 def winner(board)
