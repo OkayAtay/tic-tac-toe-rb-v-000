@@ -3,8 +3,10 @@
 require_relative '../lib/tic_tac_toe'
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def play(board)
+  turn(board)
   input = gets.strip
   if over?(board)
+    puts "Game Over"
   else
     turn(board)
   end
