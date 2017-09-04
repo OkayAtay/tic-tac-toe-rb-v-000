@@ -47,12 +47,13 @@ end
 
 def play(board)
   # we have the board that of course can pass to other method calls
-  
+
   until over?(board)
     turn(board)
   end
   if won?(board)
-  puts "Congratulations winner #{winner(board)}"
+  puts "Congratulations #{winner(board)}!"
+else
 end
 
 def turn_count(board)
