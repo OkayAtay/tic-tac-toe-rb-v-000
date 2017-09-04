@@ -5,7 +5,7 @@ board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def play(board)
   input = gets.strip
   if over?(board)
-
+  else
   end
 end
 
