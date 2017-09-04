@@ -4,8 +4,8 @@ require_relative '../lib/tic_tac_toe'
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def play(board)
   input = gets.strip
-  if condition
-    
+  if over?(board)
+
   end
 end
 
